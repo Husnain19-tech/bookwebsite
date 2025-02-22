@@ -1,0 +1,220 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #fcfbfb, #f7f8f9); /* Soft gradient background */
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navigation Bar */
+nav {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur effect */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    background: #0a0a0a;
+    color: #a48b0c; /* Coral pink */
+}
+
+/* Dropdown Menus */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    width: 200px;
+}
+
+nav ul li ul li a {
+    padding: 0.75rem 1rem;
+    display: block;
+}
+
+nav ul li ul li a:hover {
+    background: rgba(255, 111, 97, 0.1); /* Coral pink hover */
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #0a0a0a, #a48b0c); /* Vibrant gradient */
+    color: #fff;
+    padding: 6rem 2rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 60px; /* Offset for fixed nav */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Unique shape */
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Blur effect */
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #a48b0c; /* Coral pink */
+    margin-bottom: 1rem;
+}
+
+section p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(135deg, #0a0a0a, #a48b0c); /* Vibrant gradient */
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(255, 111, 97, 0.3); /* Coral pink shadow */
+}
+
+/* Set background image for the homepage */
+.homepage-image {
+    display: block;
+    max-width: 1200px; /* Increase width */
+    height: auto;
+    margin: 20px auto;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #0a0a0a, #a48b0c); /* Vibrant gradient */
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav ul li ul {
+        position: static;
+        display: none;
+    }
+
+    nav ul li:hover ul {
+        display: block;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+}
